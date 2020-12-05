@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Projects on Jacks Pino</title>
+    <link>/project/</link>
+    <description>Recent content in Projects on Jacks Pino</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Tue, 01 Dec 2020 00:00:00 +0000</lastBuildDate><atom:link href="/project/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Project 1</title>
+      <link>/project/project1test/</link>
+      <pubDate>Tue, 01 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/project/project1test/</guid>
+      <description> Test Project 1  </description>
+    </item>
+    
+    <item>
+      <title>Project 2</title>
+      <link>/project/project2/</link>
+      <pubDate>Tue, 01 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/project/project2/</guid>
+      <description> Test Project 2  </description>
+    </item>
+    
+    <item>
+      <title>Project 1: Exploratory Data Analysis</title>
+      <link>/project/project1/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/project/project1/</guid>
+      <description>Jacks Pino - jap6527 - SDS 348 - 10/19/2020 Introduction For my exploratory data analysis, I chose to use the data I previously used for my SDS 328M final project last semester. For my final project last semester, I had manually combined different datasets to determine if there was any relationship between the rate of HIV in a given county, its urbanization status or setting (meaning if it was rural or urban), and the percentage of disconnected youth (meaning the percentage of people ages 16-19 that were not in school or employed).</description>
+    </item>
+    
+  </channel>
+</rss>

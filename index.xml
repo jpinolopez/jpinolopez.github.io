@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Jacks Pino</title>
+    <link>/</link>
+    <description>Recent content on Jacks Pino</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Fri, 04 Dec 2020 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>First Blog Post!</title>
+      <link>/post/2020/12/04/first-blog-post/</link>
+      <pubDate>Fri, 04 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2020/12/04/first-blog-post/</guid>
+      <description> here i am currently typing a bunch of nonsense as suggested by dr. woodward (or whoever made the last lab)
+bada bing bada boom
+i&#39;m walkin&#39; here
+yeehaw
+bless your heart
+is this enough nonsense? we&#39;re about to find out :)
+Link to project 1
+Link to google
+#am i doing this right #we&amp;#39;re about to find out attempting to insert an image now: </description>
+    </item>
+    
+    <item>
+      <title>Project 1</title>
+      <link>/project/project1test/</link>
+      <pubDate>Tue, 01 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/project/project1test/</guid>
+      <description> Test Project 1  </description>
+    </item>
+    
+    <item>
+      <title>Project 2</title>
+      <link>/project/project2/</link>
+      <pubDate>Tue, 01 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/project/project2/</guid>
+      <description> Test Project 2  </description>
+    </item>
+    
+    <item>
+      <title>Project 1: Exploratory Data Analysis</title>
+      <link>/project/project1/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/project/project1/</guid>
+      <description>Jacks Pino - jap6527 - SDS 348 - 10/19/2020 Introduction For my exploratory data analysis, I chose to use the data I previously used for my SDS 328M final project last semester. For my final project last semester, I had manually combined different datasets to determine if there was any relationship between the rate of HIV in a given county, its urbanization status or setting (meaning if it was rural or urban), and the percentage of disconnected youth (meaning the percentage of people ages 16-19 that were not in school or employed).</description>
+    </item>
+    
+    <item>
+      <title>Projects</title>
+      <link>/projects/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/projects/</guid>
+      <description> Check out some of my coding projects below:
+ Wrangling &amp;amp; Exploratory Data Analysis
+ Modeling, Inference, Prediction
+  -- </description>
+    </item>
+    
+    <item>
+      <title>Resume</title>
+      <link>/resume/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/resume/</guid>
+      <description>    </description>
+    </item>
+    
+  </channel>
+</rss>

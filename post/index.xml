@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Jacks Pino</title>
+    <link>/post/</link>
+    <description>Recent content in Posts on Jacks Pino</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Fri, 04 Dec 2020 00:00:00 +0000</lastBuildDate><atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>First Blog Post!</title>
+      <link>/post/2020/12/04/first-blog-post/</link>
+      <pubDate>Fri, 04 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2020/12/04/first-blog-post/</guid>
+      <description> here i am currently typing a bunch of nonsense as suggested by dr. woodward (or whoever made the last lab)
+bada bing bada boom
+i&#39;m walkin&#39; here
+yeehaw
+bless your heart
+is this enough nonsense? we&#39;re about to find out :)
+Link to project 1
+Link to google
+#am i doing this right #we&amp;#39;re about to find out attempting to insert an image now: </description>
+    </item>
+    
+  </channel>
+</rss>
