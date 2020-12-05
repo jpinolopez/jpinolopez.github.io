@@ -13,7 +13,9 @@ here i am currently typing a bunch of nonsense as suggested by dr. woodward (or 
 peepee poopoo googoo gaga waawaa
 
 testing out links below:
+
 [Link to project 1](/project/project1/)
+
 [Link to google](https://www.google.com)
 
 testing out rstudio and python code chunks below:
