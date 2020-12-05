@@ -1,6 +1,6 @@
 ---
 title: First Blog Post!
-author: J. Pino
+author: Jacks Pino
 date: '2020-12-04'
 slug: first-blog-post
 categories: []
@@ -10,26 +10,21 @@ description: ''
 
 here i am currently typing a bunch of nonsense as suggested by dr. woodward (or whoever made the last lab)
 
-bada bing bada boom
+peepee poopoo googoo gaga waawaa
 
-i'm walkin' here
-
-yeehaw
-
-bless your heart
-
-is this enough nonsense? we're about to find out :)
-
+testing out links below:
 [Link to project 1](/project/project1/)
-
 [Link to google](https://www.google.com)
 
+testing out rstudio and python code chunks below:
 ```{r}
 #am i doing this right
+(100 / 2) + 19
 ```
 
 ```{python}
 #we're about to find out
+269 % 100
 ```
 
 attempting to insert an image now:
