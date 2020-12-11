@@ -72,33 +72,55 @@
               
 
 
-<div id="hello-to-whoever-is-grading-this" class="section level3">
-<h3>Hello to whoever is grading this!</h3>
+<div id="hello-to-whoever-is-grading-this" class="section level2">
+<h2>Hello to whoever is grading this!</h2>
 <p>Hi, Jacks here. This might not be as eloquent or as beautiful as one might like, but it'll get the job done.</p>
-<p>In this blog post, I'm going to go over some basic Python concepts we learned in class. I will also use reticulate to show how you can move around information from R to Python and vice versa.</p>
-<div id="python-example" class="section level4">
-<h4>Python Example</h4>
-<p>Let's talk about regular expression or regex. According to Google, the definition of regular expression is the following: a sequence of characters that define a search pattern. This is essentially control+F, just with more freedom in the characters you can look for.</p>
-<p>For this example, I'm going to reference Mr. Krabs from SpongeBob Squarepants. More specifically, I will be referencing his laugh. Refer to this short clip if you have no idea what I'm talking about: <a href="https://www.youtube.com/watch?v=PhM4VQFkw04" class="uri">https://www.youtube.com/watch?v=PhM4VQFkw04</a></p>
+<p>In this blog post, I'm going to go over a basic but powerful concept in Python we learned in class. I will also use reticulate to demonstrate how you can move around information from R to Python and vice versa, as per the rubric.</p>
+<div id="python-example" class="section level3">
+<h3>Python Example</h3>
+<p>Let's talk about regular expression or regex. According to Google, the definition of regular expression is &quot;a sequence of characters that define a search pattern.&quot; In other words, regex is a more powerful control + F, with more freedom and flexibility in the characters you can look for.</p>
+<p>For this example, I'm going to reference Mr. Krabs from SpongeBob SquarePants - more specifically, his laugh. Refer to this short clip if you have no idea what I'm talking about: <a href="https://www.youtube.com/watch?v=PhM4VQFkw04" class="uri">https://www.youtube.com/watch?v=PhM4VQFkw04</a></p>
 <p>From a Reddit post, I found that the onomatopoeia of Mr. Krabs's laugh is &quot;argh argh argha rghargh&quot; - thus, that is the string we will be using for this example.</p>
-<p>To find an instance of <code>a</code> followed by one other character, we run the following code:</p>
+<p>Regex is a module that must first be imported into Python. From there, you can use different functions and special characters to find exactly what you're looking for.</p>
+<p>To find every instance of <code>a</code> followed by any single character (including white spaces), we would run the following code:</p>
 <pre class="python"><code>import re
-mkl=&quot;argh argh argha rghargh&quot;
-re.findall(r&quot;a.&quot;,mkl)</code></pre>
+mrkrabslaugh=&quot;argh argh argha rghargh&quot;
+re.findall(r&quot;a.&quot;,mrkrabslaugh)</code></pre>
 <pre><code>## [&#39;ar&#39;, &#39;ar&#39;, &#39;ar&#39;, &#39;a &#39;, &#39;ar&#39;]</code></pre>
-<p>To find an instance of <code>a</code> followed by 2 alphanumeric characters, we run the following code:</p>
-<pre class="python"><code>re.findall(r&quot;a\w\w&quot;,mkl)</code></pre>
+<p>To find every instance of <code>a</code> followed by any 2 alphanumeric characters, we would run the following code:</p>
+<pre class="python"><code>re.findall(r&quot;a\w\w&quot;,mrkrabslaugh)</code></pre>
 <pre><code>## [&#39;arg&#39;, &#39;arg&#39;, &#39;arg&#39;, &#39;arg&#39;]</code></pre>
-<p>Finally, to find an instance of <code>argh</code>, followed by a space, we run the following code:</p>
-<pre class="python"><code>re.findall(r&quot;argh\s&quot;,mkl)</code></pre>
+<p>Finally, to find every instance of <code>argh</code>, followed by a space, we would run the following code:</p>
+<pre class="python"><code>re.findall(r&quot;argh\s&quot;,mrkrabslaugh)</code></pre>
 <pre><code>## [&#39;argh &#39;, &#39;argh &#39;]</code></pre>
+<p>In short, regex gives us the power to search for sequences of characters in any given string. As shown by the examples above, there is a lot of flexibility in what you can search for. However, I'm not here to give you a thorough rundown or complete understanding of how to use regex - cheatsheets exist online for that reason.</p>
 </div>
-<div id="reticulate-example" class="section level4">
-<h4>Reticulate Example</h4>
-<p>Words here</p>
-<pre class="r"><code>#code here</code></pre>
-<pre class="python"><code>#more code here</code></pre>
-<p>I will leave you with a funny picture and a cute picture: <img src="../../../../../post/2020-12-04-first-blog-post_files/IMG_20201106_100740.jpg" /> <img src="../../../../../post/2020-12-04-first-blog-post_files/Snapchat-877219221.jpg" /></p>
+<div id="reticulate-example" class="section level3">
+<h3>Reticulate Example</h3>
+<p>Now, onto the reticulate example. Reticulate allows the user to use both R and Python to move around and manipulate information. I'm going to demonstrate a very simple example, where I pull some previously existing data from R to get a desired output in Python.</p>
+<p>First, the reticulate library has to be imported into R. I created a random vector of numbers, ranging from 376 to 461 in R and labeled it <code>MJ</code> for this example.</p>
+<pre class="r"><code>MJ &lt;- c(433, 394, 461, 458, 393, 445, 376, 412, 390, 438)</code></pre>
+<p>We then take the vector <code>MJ</code> and save it as a vector in Python. From there, we can find the mean of the original vector, <code>MJ</code>, now labeled <code>emjay</code> in Python.</p>
+<pre class="python"><code>import numpy as np
+emjay = r.MJ
+np.mean(emjay)</code></pre>
+<pre><code>## 420.0</code></pre>
+<p>This tells us that the original vector <code>MJ</code> has a mean of 420. What a complete coincidence! This also could've been easily done in one R code chunk, but isn't it more fun to import a few libraries and use different languages to code?</p>
+<p>This was a very simplistic example, but reticulate is a very powerful tool and can be used in much more creative ways than how I used it. After all, not everyone uses it solely because it is a requirement for a project they've been assigned. I digress.</p>
+</div>
+<div id="farewell" class="section level3">
+<h3>Farewell</h3>
+<p>Thanks to whoever eventually reads this. I hope this was mildly entertaining to read. If not, I threw in both a funny and a cute picture in the hopes that it will make you smile.</p>
+<p>Best,</p>
+<p>Jacks Pino</p>
+<div class="figure">
+<img src="../../../../../post/2020-12-04-first-blog-post_files/IMG_20201106_100740.jpg" />
+
+</div>
+<div class="figure">
+<img src="../../../../../post/2020-12-04-first-blog-post_files/Snapchat-877219221.jpg" />
+
+</div>
 </div>
 </div>
 

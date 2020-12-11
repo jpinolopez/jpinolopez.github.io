@@ -7,62 +7,97 @@ categories: []
 tags: []
 description: ''
 ---
-###Hello to whoever is grading this!
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(reticulate)
+```
+##Hello to whoever is grading this!
 Hi, Jacks here. This might not be as eloquent or as beautiful as one might like, but it'll get the job done.
 
 
-In this blog post, I'm going to go over some basic Python concepts we learned in class. I will also use reticulate to show how you can move around information from R to Python and vice versa.
+In this blog post, I'm going to go over a basic but powerful concept in Python we learned in class. I will also use reticulate to demonstrate how you can move around information from R to Python and vice versa, as per the rubric.
 
 
-####Python Example
+###Python Example
 
-Let's talk about regular expression or regex. According to Google, the definition of regular expression is the following: a sequence of characters that define a search pattern. This is essentially control+F, just with more freedom in the characters you can look for.
+Let's talk about regular expression or regex. According to Google, the definition of regular expression is "a sequence of characters that define a search pattern." In other words, regex is a more powerful control + F, with more freedom and flexibility in the characters you can look for.
 
 
-For this example, I'm going to reference Mr. Krabs from SpongeBob Squarepants. More specifically, I will be referencing his laugh. Refer to this short clip if you have no idea what I'm talking about: https://www.youtube.com/watch?v=PhM4VQFkw04
+For this example, I'm going to reference Mr. Krabs from SpongeBob SquarePants - more specifically, his laugh. Refer to this short clip if you have no idea what I'm talking about: https://www.youtube.com/watch?v=PhM4VQFkw04
 
 
 From a Reddit post, I found that the onomatopoeia of Mr. Krabs's laugh is "argh argh argha rghargh" - thus, that is the string we will be using for this example.
 
 
-To find an instance of `a` followed by one other character, we run the following code:
+Regex is a module that must first be imported into Python. From there, you can use different functions and special characters to find exactly what you're looking for.
+
+
+To find every instance of `a` followed by any single character (including white spaces), we would run the following code:
 
 
 ```{python}
 import re
-mkl="argh argh argha rghargh"
-re.findall(r"a.",mkl)
+mrkrabslaugh="argh argh argha rghargh"
+re.findall(r"a.",mrkrabslaugh)
 ```
 
 
-To find an instance of `a` followed by 2 alphanumeric characters, we run the following code:
+To find every instance of `a` followed by any 2 alphanumeric characters, we would run the following code:
 
 
 ```{python}
-re.findall(r"a\w\w",mkl)
-
+re.findall(r"a\w\w",mrkrabslaugh)
 ```
 
 
-Finally, to find an instance of `argh`, followed by a space, we run the following code:
+Finally, to find every instance of `argh`, followed by a space, we would run the following code:
 
 
 ```{python}
-re.findall(r"argh\s",mkl)
+re.findall(r"argh\s",mrkrabslaugh)
 ```
 
-####Reticulate Example
 
-Words here
+In short, regex gives us the power to search for sequences of characters in any given string. As shown by the examples above, there is a lot of flexibility in what you can search for. However, I'm not here to give you a thorough rundown or complete understanding of how to use regex - cheatsheets exist online for that reason.
+
+
+###Reticulate Example
+
+Now, onto the reticulate example. Reticulate allows the user to use both R and Python to move around and manipulate information. I'm going to demonstrate a very simple example, where I pull some previously existing data from R to get a desired output in Python.
+
+First, the reticulate library has to be imported into R. I created a random vector of numbers, ranging from 376 to 461 in R and labeled it `MJ` for this example.
 
 ```{R}
-#code here
+MJ <- c(433, 394, 461, 458, 393, 445, 376, 412, 390, 438)
 ```
+
+
+We then take the vector `MJ` and save it as a vector in Python. From there, we can find the mean of the original vector, `MJ`, now labeled `emjay` in Python.
+
 
 ```{python}
-#more code here
+import numpy as np
+emjay = r.MJ
+np.mean(emjay)
 ```
 
-I will leave you with a funny picture and a cute picture:
+
+This tells us that the original vector `MJ` has a mean of 420. What a complete coincidence! This also could've been easily done in one R code chunk, but isn't it more fun to import a few libraries and use different languages to code?
+
+
+This was a very simplistic example, but reticulate is a very powerful tool and can be used in much more creative ways than how I used it. After all, not everyone uses it solely because it is a requirement for a project they've been assigned. I digress.
+
+
+###Farewell
+
+Thanks to whoever eventually reads this. I hope this was mildly entertaining to read. If not, I threw in both a funny and a cute picture in the hopes that it will make you smile.
+
+
+Best,
+
+Jacks Pino
+
 ![](/post/2020-12-04-first-blog-post_files/IMG_20201106_100740.jpg)
+
+
 ![](/post/2020-12-04-first-blog-post_files/Snapchat-877219221.jpg)

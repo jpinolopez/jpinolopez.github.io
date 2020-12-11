@@ -14,8 +14,7 @@
       
       <guid>/post/2020/12/11/first-blog-post/</guid>
       <description>Hello to whoever is grading this! Hi, Jacks here. This might not be as eloquent or as beautiful as one might like, but it&#39;ll get the job done.
-In this blog post, I&#39;m going to go over some basic Python concepts we learned in class. I will also use reticulate to show how you can move around information from R to Python and vice versa.
-Python Example Let&#39;s talk about regular expression or regex.</description>
+In this blog post, I&#39;m going to go over a basic but powerful concept in Python we learned in class. I will also use reticulate to demonstrate how you can move around information from R to Python and vice versa, as per the rubric.</description>
     </item>
     
     <item>
@@ -39,7 +38,7 @@ Python Example Let&#39;s talk about regular expression or regex.</description>
     <item>
       <title>Project 1: Exploratory Data Analysis</title>
       <link>/project/project1/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 19 Oct 2020 00:00:00 +0000</pubDate>
       
       <guid>/project/project1/</guid>
       <description>Jacks Pino - jap6527 - SDS 348 - 10/19/2020 Introduction For my exploratory data analysis, I chose to use the data I previously used for my SDS 328M final project last semester. For my final project last semester, I had manually combined different datasets to determine if there was any relationship between the rate of HIV in a given county, its urbanization status or setting (meaning if it was rural or urban), and the percentage of disconnected youth (meaning the percentage of people ages 16-19 that were not in school or employed).</description>
