@@ -6,8 +6,46 @@ hiderelated: true
 hidediscus: true
 ---
 
-<center>
-<object data="/resume.pdf" type="application/pdf" >
-<embed src="/resume.pdf" type="application/pdf" style="min-height:100vh;width:100%" />
-</object>
-</center>
+#Jacks Pino
+
+
+they/them
+
+
+Email: jpino@utexas.edu
+
+
+##Skills
+
+
+Proficient in the art of procrastination.
+
+
+Experienced in pretending to be productive.
+
+
+Well versed in having a terrible sleep schedule.
+
+
+##Education
+###University of Texas at Austin
+B.S.A. in Biology, Class of 2022
+
+
+Iberian and Latin American Literatures, Cultures, and Linguistics Minor
+
+
+Austin, Texas
+
+
+##Professional Experience
+###Texas Pre-Optometry Professional Society
+
+
+Secretary
+
+
+Austin, Texas
+
+
+2020-2021
