@@ -1,7 +1,7 @@
 ---
-title: First Blog Post!
+title: First (and only?) Blog Post!
 author: Jacks Pino
-date: '2020-12-10'
+date: '2020-12-11'
 slug: first-blog-post
 categories: []
 tags: []
@@ -29,5 +29,6 @@ testing out rstudio and python code chunks below:
 269 % 100
 ```
 
-attempting to insert an image now:
-![](/post/2020-12-04-first-blog-post_files/rat.png)
+I will leave you with a funny picture and a cute picture:
+![](/post/2020-12-04-first-blog-post_files/IMG_20201106_100740.jpg)
+![](/post/2020-12-04-first-blog-post_files/Snapchat-877219221.jpg)
