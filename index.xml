@@ -13,13 +13,9 @@
       <pubDate>Fri, 11 Dec 2020 00:00:00 +0000</pubDate>
       
       <guid>/post/2020/12/11/first-blog-post/</guid>
-      <description> here i am currently typing a bunch of nonsense as suggested by dr. woodward (or whoever made the last lab)
-peepee poopoo googoo gaga waawaa
-testing out links below:
-Link to project 1
-Link to google
-testing out rstudio and python code chunks below:
-#am i doing this right (100 / 2) + 19 ## [1] 69 #we&amp;#39;re about to find out 269 % 100 ## 69 I will leave you with a funny picture and a cute picture: </description>
+      <description> Hello to whoever is grading this! Hi, Jacks here. This might not be as eloquent or as beautiful as one might like, but it&#39;ll get the job done.
+In this blog post, I&#39;m going to go over some basic Python concepts we learned in class. I will also use reticulate to show how you can move around information from R to Python and vice versa.
+#am i doing this right (100 / 2) + 19 ## [1] 69 #we&amp;#39;re about to find out 269 % 100 ## 69 I will leave you with a funny picture and a cute picture:  </description>
     </item>
     
     <item>
@@ -67,18 +63,15 @@ testing out rstudio and python code chunks below:
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/resume/</guid>
-      <description> Jacks Pino they/them
+      <description>Jacks Pino (they/them)
+I&#39;m a biology student pursuing a minor in Spanish. I&#39;m currently interested in pursuing optometry but hope to attend graduate school in some capacity after graduating.
 Email: jpino@utexas.edu
-Skills Proficient in the art of procrastination.
-Experienced in pretending to be productive.
-Well versed in having a terrible sleep schedule.
- Education University of Texas at Austin B.S.A. in Biology, Class of 2022
-Iberian and Latin American Literatures, Cultures, and Linguistics Minor
-Austin, Texas
-  Professional Experience Texas Pre-Optometry Professional Society Secretary
-Austin, Texas
-2020-2021
-   </description>
+Skills  Proficient in the art of procrastination
+ Experienced in pretending to be productive
+ Well versed in having a terrible sleep schedule
+ Moderately fluent in Spanish
+   Interests  Languages and linguistics
+ Video games (Overwatch, Animal Crossing, Minecraft, etc)</description>
     </item>
     
   </channel>

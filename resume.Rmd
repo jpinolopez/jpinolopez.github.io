@@ -5,11 +5,13 @@ hidedate: true
 hiderelated: true
 hidediscus: true
 ---
-
 #Jacks Pino
 
 
-they/them
+(they/them)
+
+
+I'm a biology student pursuing a minor in Spanish. I'm currently interested in pursuing optometry but hope to attend graduate school in some capacity after graduating.
 
 
 Email: jpino@utexas.edu
@@ -18,13 +20,31 @@ Email: jpino@utexas.edu
 ##Skills
 
 
-Proficient in the art of procrastination.
+- Proficient in the art of procrastination
 
 
-Experienced in pretending to be productive.
+- Experienced in pretending to be productive
 
 
-Well versed in having a terrible sleep schedule.
+- Well versed in having a terrible sleep schedule
+
+
+- Moderately fluent in Spanish
+
+
+##Interests
+
+
+- Languages and linguistics
+
+
+- Video games (Overwatch, Animal Crossing, Minecraft, etc)
+
+
+- Cooking, sometimes baking
+
+
+- Animals, mostly dogs and cats
 
 
 ##Education
@@ -39,6 +59,18 @@ Austin, Texas
 
 
 ##Professional Experience
+
+###Houston Methodist
+
+Student Intern
+
+
+Houston, Texas
+
+
+Summer 2017
+
+
 ###Texas Pre-Optometry Professional Society
 
 
@@ -49,3 +81,11 @@ Austin, Texas
 
 
 2020-2021
+
+
+##Accomplishments
+
+-	AP Scholar with Distinction, September 2018
+-	National Hispanic Scholar, September 2018
+-	University Honors, Spring 2019
+

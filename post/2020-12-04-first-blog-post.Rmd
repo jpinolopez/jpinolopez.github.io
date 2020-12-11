@@ -7,18 +7,11 @@ categories: []
 tags: []
 description: ''
 ---
+###Hello to whoever is grading this!
+Hi, Jacks here. This might not be as eloquent or as beautiful as one might like, but it'll get the job done.
 
-here i am currently typing a bunch of nonsense as suggested by dr. woodward (or whoever made the last lab)
+In this blog post, I'm going to go over some basic Python concepts we learned in class. I will also use reticulate to show how you can move around information from R to Python and vice versa.
 
-peepee poopoo googoo gaga waawaa
-
-testing out links below:
-
-[Link to project 1](/project/project1/)
-
-[Link to google](https://www.google.com)
-
-testing out rstudio and python code chunks below:
 ```{r}
 #am i doing this right
 (100 / 2) + 19
