@@ -13,9 +13,9 @@
       <pubDate>Fri, 11 Dec 2020 00:00:00 +0000</pubDate>
       
       <guid>/post/2020/12/11/first-blog-post/</guid>
-      <description> Hello to whoever is grading this! Hi, Jacks here. This might not be as eloquent or as beautiful as one might like, but it&#39;ll get the job done.
+      <description>Hello to whoever is grading this! Hi, Jacks here. This might not be as eloquent or as beautiful as one might like, but it&#39;ll get the job done.
 In this blog post, I&#39;m going to go over some basic Python concepts we learned in class. I will also use reticulate to show how you can move around information from R to Python and vice versa.
-#am i doing this right (100 / 2) + 19 ## [1] 69 #we&amp;#39;re about to find out 269 % 100 ## 69 I will leave you with a funny picture and a cute picture:  </description>
+Python Example Let&#39;s talk about regular expression or regex.</description>
     </item>
     
     <item>

@@ -10,16 +10,57 @@ description: ''
 ###Hello to whoever is grading this!
 Hi, Jacks here. This might not be as eloquent or as beautiful as one might like, but it'll get the job done.
 
+
 In this blog post, I'm going to go over some basic Python concepts we learned in class. I will also use reticulate to show how you can move around information from R to Python and vice versa.
 
-```{r}
-#am i doing this right
-(100 / 2) + 19
+
+####Python Example
+
+Let's talk about regular expression or regex. According to Google, the definition of regular expression is the following: a sequence of characters that define a search pattern. This is essentially control+F, just with more freedom in the characters you can look for.
+
+
+For this example, I'm going to reference Mr. Krabs from SpongeBob Squarepants. More specifically, I will be referencing his laugh. Refer to this short clip if you have no idea what I'm talking about: https://www.youtube.com/watch?v=PhM4VQFkw04
+
+
+From a Reddit post, I found that the onomatopoeia of Mr. Krabs's laugh is "argh argh argha rghargh" - thus, that is the string we will be using for this example.
+
+
+To find an instance of `a` followed by one other character, we run the following code:
+
+
+```{python}
+import re
+mkl="argh argh argha rghargh"
+re.findall(r"a.",mkl)
+```
+
+
+To find an instance of `a` followed by 2 alphanumeric characters, we run the following code:
+
+
+```{python}
+re.findall(r"a\w\w",mkl)
+
+```
+
+
+Finally, to find an instance of `argh`, followed by a space, we run the following code:
+
+
+```{python}
+re.findall(r"argh\s",mkl)
+```
+
+####Reticulate Example
+
+Words here
+
+```{R}
+#code here
 ```
 
 ```{python}
-#we're about to find out
-269 % 100
+#more code here
 ```
 
 I will leave you with a funny picture and a cute picture:

@@ -76,13 +76,30 @@
 <h3>Hello to whoever is grading this!</h3>
 <p>Hi, Jacks here. This might not be as eloquent or as beautiful as one might like, but it'll get the job done.</p>
 <p>In this blog post, I'm going to go over some basic Python concepts we learned in class. I will also use reticulate to show how you can move around information from R to Python and vice versa.</p>
-<pre class="r"><code>#am i doing this right
-(100 / 2) + 19</code></pre>
-<pre><code>## [1] 69</code></pre>
-<pre class="python"><code>#we&#39;re about to find out
-269 % 100</code></pre>
-<pre><code>## 69</code></pre>
+<div id="python-example" class="section level4">
+<h4>Python Example</h4>
+<p>Let's talk about regular expression or regex. According to Google, the definition of regular expression is the following: a sequence of characters that define a search pattern. This is essentially control+F, just with more freedom in the characters you can look for.</p>
+<p>For this example, I'm going to reference Mr. Krabs from SpongeBob Squarepants. More specifically, I will be referencing his laugh. Refer to this short clip if you have no idea what I'm talking about: <a href="https://www.youtube.com/watch?v=PhM4VQFkw04" class="uri">https://www.youtube.com/watch?v=PhM4VQFkw04</a></p>
+<p>From a Reddit post, I found that the onomatopoeia of Mr. Krabs's laugh is &quot;argh argh argha rghargh&quot; - thus, that is the string we will be using for this example.</p>
+<p>To find an instance of <code>a</code> followed by one other character, we run the following code:</p>
+<pre class="python"><code>import re
+mkl=&quot;argh argh argha rghargh&quot;
+re.findall(r&quot;a.&quot;,mkl)</code></pre>
+<pre><code>## [&#39;ar&#39;, &#39;ar&#39;, &#39;ar&#39;, &#39;a &#39;, &#39;ar&#39;]</code></pre>
+<p>To find an instance of <code>a</code> followed by 2 alphanumeric characters, we run the following code:</p>
+<pre class="python"><code>re.findall(r&quot;a\w\w&quot;,mkl)</code></pre>
+<pre><code>## [&#39;arg&#39;, &#39;arg&#39;, &#39;arg&#39;, &#39;arg&#39;]</code></pre>
+<p>Finally, to find an instance of <code>argh</code>, followed by a space, we run the following code:</p>
+<pre class="python"><code>re.findall(r&quot;argh\s&quot;,mkl)</code></pre>
+<pre><code>## [&#39;argh &#39;, &#39;argh &#39;]</code></pre>
+</div>
+<div id="reticulate-example" class="section level4">
+<h4>Reticulate Example</h4>
+<p>Words here</p>
+<pre class="r"><code>#code here</code></pre>
+<pre class="python"><code>#more code here</code></pre>
 <p>I will leave you with a funny picture and a cute picture: <img src="../../../../../post/2020-12-04-first-blog-post_files/IMG_20201106_100740.jpg" /> <img src="../../../../../post/2020-12-04-first-blog-post_files/Snapchat-877219221.jpg" /></p>
+</div>
 </div>
 
             
