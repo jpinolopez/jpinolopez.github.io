@@ -53,15 +53,14 @@ dataset %>% glimpse()
 
 - **1. (15 pts)** Perform a MANOVA testing whether any of your numeric variables (or a subset of them, if including them all is unreasonable or doesn't make sense) show a mean difference across levels of one of your categorical variables. If they do, perform univariate ANOVAs to find response(s) showing a mean difference across groups, and perform post-hoc t tests to find which groups differ. Discuss the number of tests you have performed, calculate the probability of at least one type I error (if unadjusted), and adjust the significance level accordingly (bonferroni correction) before discussing significant differences. Briefly discuss MANOVA assumptions and whether or not they are likely to have been met (no need for anything too in-depth).
 
-A MANOVA was performed to test if any of the numeric variables showed a mean difference across levels in the proportion of access to basic sanitation.
+A MANOVA was performed to test if any of the numeric variables showed a mean difference across levels in the proportion of access to basic sanitation. The p-value of this test was less than 2.2e-16, thus indicating that there *is* a mean difference among the levels. An ANOVA was then subsequently run to find one or more responses showing a mean difference. Post hoc t-tests were also found to determine which groups in particular differed. The results of these tests tell us that fertility rate, child mortality rate, and food supply have very clear influences on the proportion of the population with access to basic sanitation. The rate of billionaires is less influential but still has some sort of influence, while inflation appears to have no influence or relation to the 
 
 ```{R}
-#original MANOVA
 man1<-manova(cbind(fertilityrate,childmortalityrate,foodsupply,billionairerate,inflation)~sanprop_lvl, data=dataset)
+
 summary(man1)
 
-#subsequent ANOVAs
-
+summary.aov(man1)
 ```
 ### Randomization Test
 

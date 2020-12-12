@@ -1,5 +1,5 @@
 ---
-title: First (and only?) Blog Post!
+title: First Blog Post!
 author: Jacks Pino
 date: '2020-12-11'
 slug: first-blog-post

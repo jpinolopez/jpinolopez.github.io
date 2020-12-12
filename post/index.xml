@@ -8,13 +8,22 @@
     <language>en-US</language>
     <lastBuildDate>Fri, 11 Dec 2020 00:00:00 +0000</lastBuildDate><atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>First (and only?) Blog Post!</title>
+      <title>First Blog Post!</title>
       <link>/post/2020/12/11/first-blog-post/</link>
       <pubDate>Fri, 11 Dec 2020 00:00:00 +0000</pubDate>
       
       <guid>/post/2020/12/11/first-blog-post/</guid>
       <description>Hello to whoever is grading this! Hi, Jacks here. This might not be as eloquent or as beautiful as one might like, but it&#39;ll get the job done.
 In this blog post, I&#39;m going to go over a basic but powerful concept in Python we learned in class. I will also use reticulate to demonstrate how you can move around information from R to Python and vice versa, as per the rubric.</description>
+    </item>
+    
+    <item>
+      <title>Late Assignments :)</title>
+      <link>/post/2020/12/11/late-assignments/</link>
+      <pubDate>Fri, 11 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2020/12/11/late-assignments/</guid>
+      <description>Hello again to whoever is grading this! I&#39;m making this blog post in the hopes that Dr. Woodward has mercy on me and either lets me turn in some assignments late or gives me an incomplete for the semester. I am really, truly hoping for a miracle. I don&#39;t want to fail this class. (Especially because I felt I was doing really well until we reached the 3/4 mark...)</description>
     </item>
     
   </channel>

@@ -1,0 +1,14 @@
+---
+title: First (and only?) Blog Post!
+author: Jacks Pino
+date: '2020-12-11'
+slug: first-blog-post
+categories: []
+tags: []
+description: ''
+---
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(reticulate)
+```
+##Hello to whoever is grading this!

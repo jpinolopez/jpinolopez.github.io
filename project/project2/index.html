@@ -112,9 +112,9 @@ high, high, high, high, med, high, h…</code></pre>
 <ul>
 <li><strong>1. (15 pts)</strong> Perform a MANOVA testing whether any of your numeric variables (or a subset of them, if including them all is unreasonable or doesn't make sense) show a mean difference across levels of one of your categorical variables. If they do, perform univariate ANOVAs to find response(s) showing a mean difference across groups, and perform post-hoc t tests to find which groups differ. Discuss the number of tests you have performed, calculate the probability of at least one type I error (if unadjusted), and adjust the significance level accordingly (bonferroni correction) before discussing significant differences. Briefly discuss MANOVA assumptions and whether or not they are likely to have been met (no need for anything too in-depth).</li>
 </ul>
-<p>A MANOVA was performed to test if any of the numeric variables showed a mean difference across levels in the proportion of access to basic sanitation.</p>
-<pre class="r"><code>#original MANOVA
-man1&lt;-manova(cbind(fertilityrate,childmortalityrate,foodsupply,billionairerate,inflation)~sanprop_lvl, data=dataset)
+<p>A MANOVA was performed to test if any of the numeric variables showed a mean difference across levels in the proportion of access to basic sanitation. The p-value of this test was less than 2.2e-16, thus indicating that there <em>is</em> a mean difference among the levels. An ANOVA was then subsequently run to find one or more responses showing a mean difference. Post hoc t-tests were also found to determine which groups in particular differed. The results of these tests tell us that fertility rate, child mortality rate, and food supply have very clear influences on the proportion of the population with access to basic sanitation. The rate of billionaires is less influential but still has some sort of influence, while inflation appears to have no influence or relation to the</p>
+<pre class="r"><code>man1&lt;-manova(cbind(fertilityrate,childmortalityrate,foodsupply,billionairerate,inflation)~sanprop_lvl, data=dataset)
+
 summary(man1)</code></pre>
 <pre><code>## Df Pillai approx F num Df den Df Pr(&gt;F)
 ## sanprop_lvl 2 0.87942 24.642 10 314 &lt; 2.2e-16 ***
@@ -122,7 +122,48 @@ summary(man1)</code></pre>
 ## ---
 ## Signif. codes: 0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1
 &#39; &#39; 1</code></pre>
-<pre class="r"><code>#subsequent ANOVAs</code></pre>
+<pre class="r"><code>summary.aov(man1)</code></pre>
+<pre><code>## Response fertilityrate :
+## Df Sum Sq Mean Sq F value Pr(&gt;F)
+## sanprop_lvl 2 243.36 121.678 177.92 &lt; 2.2e-16 ***
+## Residuals 160 109.42 0.684
+## ---
+## Signif. codes: 0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1
+&#39; &#39; 1
+##
+## Response childmortalityrate :
+## Df Sum Sq Mean Sq F value Pr(&gt;F)
+## sanprop_lvl 2 174235 87117 172.17 &lt; 2.2e-16 ***
+## Residuals 160 80962 506
+## ---
+## Signif. codes: 0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1
+&#39; &#39; 1
+##
+## Response foodsupply :
+## Df Sum Sq Mean Sq F value Pr(&gt;F)
+## sanprop_lvl 2 15770681 7885340 78.76 &lt; 2.2e-16 ***
+## Residuals 160 16019014 100119
+## ---
+## Signif. codes: 0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1
+&#39; &#39; 1
+##
+## Response billionairerate :
+## Df Sum Sq Mean Sq F value Pr(&gt;F)
+## sanprop_lvl 2 4.628 2.31383 6.3062 0.002311 **
+## Residuals 160 58.706 0.36692
+## ---
+## Signif. codes: 0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1
+&#39; &#39; 1
+##
+## Response inflation :
+## Df Sum Sq Mean Sq F value Pr(&gt;F)
+## sanprop_lvl 2 0.03593 0.0179625 2.7666 0.06588 .
+## Residuals 160 1.03882 0.0064926
+## ---
+## Signif. codes: 0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1
+&#39; &#39; 1
+##
+## 32 observations deleted due to missingness</code></pre>
 </div>
 <div id="randomization-test" class="section level3">
 <h3>Randomization Test</h3>

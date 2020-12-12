@@ -1,0 +1,23 @@
+---
+title: Late Assignments :)
+author: Jacks Pino
+date: '2020-12-11'
+slug: late-assignments
+categories: []
+tags: []
+description: ''
+---
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(reticulate)
+```
+##Hello again to whoever is grading this!
+
+I'm making this blog post in the hopes that Dr. Woodward has mercy on me and either lets me turn in some assignments late or gives me an incomplete for the semester. I am really, truly hoping for a miracle. I don't want to fail this class. (Especially because I felt I was doing really well until we reached the 3/4 mark...)
+
+I will update these with links to the homeworks I never turned in with the hope that you'll at least look at them. Project 2 is also a work in progress but it is currently being updated and already has a designated spot on the website.
+
+Best,
+
+
+Jacks Pino
