@@ -1,8 +1,109 @@
 ---
-title: "Project 2"
-author: "Me"
-date: "2020-12-01"
-output: html_document
+title: 'Project 2: Modeling, Testing, and Predicting'
+author:
+date: '2020-12-11'
+output:
+  html_document:
+    toc: yes
+    toc_float:
+      collapsed: no
+      smooth_scroll: yes
 ---
 
-## Test Project 2
+```{r setup, include=FALSE}
+library(knitr)
+hook_output = knit_hooks$get('output')
+knit_hooks$set(output = function(x, options) {
+  # this hook is used only when the linewidth option is not NULL
+  if (!is.null(n <- options$linewidth)) {
+    x = knitr:::split_lines(x)
+    # any lines wider than n should be wrapped
+    if (any(nchar(x) > n)) x = strwrap(x, width = n)
+    x = paste(x, collapse = '\n')
+  }
+  hook_output(x, options)
+})
+
+knitr::opts_chunk$set(echo = TRUE, eval = TRUE,fig.align="center",warning=FALSE,message=FALSE,fig.width=8, fig.height=5, linewidth=60)
+options(tibble.width = 100,width = 100)
+library(tidyverse)
+```
+
+##Jacks Pino - jap6527 - SDS 348 - 12/11/2020
+
+## Introduction
+
+I chose to use data I found on gapminder.org, which has a plethora of data of the world's countries. The variables I chose to look at in particular were the following: fertility rate, child mortality rate, food supply, the proportion of billionaires, the proportion of those who have access to basic sanitation, population density, and the rate of inflation. I converted population density into a binary categorical variable - countries with a population density greater than 80 people per square kilometer were categorized as high while countries below 80 people per square kilometer were categorized as low. The proportion of access to sanitation was converted to a trinary categorical variable, with categories of low, medium, and high. There are 195 different countries being observed, with 5 numeric variables and 2 categorical variables. 
+
+```{R}
+library(dplyr)
+library(tidyverse)
+library(ggplot2)
+library(cluster)
+dataset <- read.csv("https://drive.google.com/uc?export=download&id=1r9nLgIHQhCnbG1nOS7vbfR6gI9SWXRmc")
+dataset$foodsupply <- as.numeric(dataset$foodsupply)
+dataset %>% mutate(popdensity_lvl = case_when(popdensity >= 80 ~ "high", popdensity < 80 ~ "low")) %>%
+  mutate(popdensity_lvl = factor(popdensity_lvl, levels = c("low", "high"))) %>% select(c(country,3:9)) -> dataset
+dataset %>% mutate(sanprop_lvl = case_when(sanitationprop < 0.5 ~ "low", sanitationprop > 0.85 ~ "high", sanitationprop > 0.5 ~ "med")) %>%
+  mutate(sanprop_lvl = factor(sanprop_lvl, levels = c("med", "high", "low"))) %>% select(c(1:5,7:9)) -> dataset
+dataset %>% glimpse()
+```
+
+### MANOVA Test
+
+- **1. (15 pts)** Perform a MANOVA testing whether any of your numeric variables (or a subset of them, if including them all is unreasonable or doesn't make sense) show a mean difference across levels of one of your categorical variables. If they do, perform univariate ANOVAs to find response(s) showing a mean difference across groups, and perform post-hoc t tests to find which groups differ. Discuss the number of tests you have performed, calculate the probability of at least one type I error (if unadjusted), and adjust the significance level accordingly (bonferroni correction) before discussing significant differences. Briefly discuss MANOVA assumptions and whether or not they are likely to have been met (no need for anything too in-depth).
+
+A MANOVA was performed to test if any of the numeric variables showed a mean difference across levels in the proportion of access to basic sanitation.
+
+```{R}
+#original MANOVA
+man1<-manova(cbind(fertilityrate,childmortalityrate,foodsupply,billionairerate,inflation)~sanprop_lvl, data=dataset)
+summary(man1)
+
+#subsequent ANOVAs
+
+```
+### Randomization Test
+
+- **2. (10 pts)** Perform some kind of randomization test on your data (that makes sense). The statistic can be anything you want (mean difference, correlation, F-statistic/ANOVA, chi-squared), etc. State null and alternative hypotheses, perform the test, and interpret the results (7). Create a plot visualizing the null distribution and the test statistic (3).
+
+### Linear Regression Model
+
+- **3. (35 pts)** Build a linear regression model predicting one of your response variables from at least 2 other variables, including their interaction. Mean-center any numeric variables involved in the interaction.
+
+    - Interpret the coefficient estimates (do not discuss significance) (10)
+    - Plot the regression using `ggplot()` using geom_smooth(method="lm"). If your interaction is numeric by numeric, refer to code in the slides to make the plot or check out the `interactions` package, which makes this easier. If you have 3 or more predictors, just chose two of them to plot for convenience. (8)
+    - Check assumptions of linearity, normality, and homoskedasticity either graphically or using a hypothesis test (4)
+    - Regardless, recompute regression results with robust standard errors via `coeftest(..., vcov=vcovHC(...))`. Discuss significance of results, including any changes from before/after robust SEs if applicable. (8)
+    - What proportion of the variation in the outcome does your model explain? (4)
+
+### Computation of Bootstrapped SEs
+
+- **4. (5 pts)** Rerun same regression model (with the interaction), but this time compute bootstrapped standard errors (either by resampling observations or residuals). Discuss any changes you observe in SEs and p-values using these SEs compared to the original SEs and the robust SEs)
+
+
+### Prediction of a Binary Variable
+
+- **5. (25 pts)** Fit a logistic regression model predicting a binary variable (if you don't have one, make/get one) from at least two explanatory variables (interaction not necessary). 
+
+    - Interpret coefficient estimates in context (10)
+    - Report a confusion matrix for your logistic regression (2)
+    - Compute and discuss the Accuracy, Sensitivity (TPR), Specificity (TNR), Precision (PPV), and AUC of your model (5)
+    - Using ggplot, make a density plot of the log-odds (logit) colored/grouped by your binary outcome variable (3)
+    - Generate an ROC curve (plot) and calculate AUC (either manually or with a package); interpret (5)
+
+### Secondary Prediction of a Binary Variable
+
+- **6. (25 pts)** Perform a logistic regression predicting the same binary response variable from *ALL* of the rest of your variables (the more, the better!) 
+
+    - Fit model, compute in-sample classification diagnostics (Accuracy, Sensitivity, Specificity, Precision, AUC), and interpret (5)
+    - Perform 10-fold (or repeated random sub-sampling) CV with the same model and report average out-of-sample classification diagnostics (Accuracy, Sensitivity, Specificity, Precision, and AUC); interpret AUC and compare with the in-sample metrics (10)
+    - Perform LASSO on the same model/variables. Choose lambda to give the simplest model whose accuracy is near that of the best (i.e., `lambda.1se`). Discuss which variables are retained. (5)
+    - Perform 10-fold CV using only the variables lasso selected: compare model's out-of-sample AUC to that of your logistic regressions above (5)
+
+...
+
+
+
+
+

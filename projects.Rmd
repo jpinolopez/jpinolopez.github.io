@@ -13,6 +13,14 @@ Check out some of my coding projects below:
 
 <i class="fa fa-line-chart"></i> &nbsp; [Modeling, Inference, Prediction](/project/project2/)
 
+<i class="fa fa-tasks"></i> &nbsp; [Homework 8](/project/HW8/)
+
+<i class="fa fa-tasks"></i> &nbsp; [Homework 9](/project/HW9/)
+
+<i class="fa fa-tasks"></i> &nbsp; [Homework 10](/project/HW10/)
+
+<i class="fa fa-tasks"></i> &nbsp; [Homework 1](/project/HW11/)
+
 <!--
 <i class="fa fa-pie-chart"></i> 
 <i class="fa fa-tasks"></i> 

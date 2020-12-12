@@ -7,7 +7,7 @@
     <meta name="author" content="Jacks Pino" />
     
     <link rel="shortcut icon" type="image/x-icon" href="../../img/favicon.ico">
-    <title>Project 2</title>
+    <title>Project 2: Modeling, Testing, and Predicting</title>
     <meta name="generator" content="Hugo 0.79.0" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="../../css/main.css" />
@@ -54,13 +54,13 @@
       <div class="container">
         <div class="blog-post">
           <h3>
-            <strong><a href="../../project/project2/">Project 2</a></strong>
+            <strong><a href="../../project/project2/">Project 2: Modeling, Testing, and Predicting</a></strong>
           </h3>
         </div>
  
 <div class="blog-title">
           <h4>
-         December 1, 2020 
+         December 11, 2020 
             &nbsp;&nbsp;
             
           </h4>
@@ -72,8 +72,109 @@
               
 
 
-<div id="test-project-2" class="section level2">
-<h2>Test Project 2</h2>
+<div id="jacks-pino---jap6527---sds-348---12112020" class="section level2">
+<h2>Jacks Pino - jap6527 - SDS 348 - 12/11/2020</h2>
+</div>
+<div id="introduction" class="section level2">
+<h2>Introduction</h2>
+<p>I chose to use data I found on gapminder.org, which has a plethora of data of the world's countries. The variables I chose to look at in particular were the following: fertility rate, child mortality rate, food supply, the proportion of billionaires, the proportion of those who have access to basic sanitation, population density, and the rate of inflation. I converted population density into a binary categorical variable - countries with a population density greater than 80 people per square kilometer were categorized as high while countries below 80 people per square kilometer were categorized as low. The proportion of access to sanitation was converted to a trinary categorical variable, with categories of low, medium, and high. There are 195 different countries being observed, with 5 numeric variables and 2 categorical variables.</p>
+<pre class="r"><code>library(dplyr)
+library(tidyverse)
+library(ggplot2)
+library(cluster)
+dataset &lt;- read.csv(&quot;https://drive.google.com/uc?export=download&amp;id=1r9nLgIHQhCnbG1nOS7vbfR6gI9SWXRmc&quot;)
+dataset$foodsupply &lt;- as.numeric(dataset$foodsupply)
+dataset %&gt;% mutate(popdensity_lvl = case_when(popdensity &gt;= 80 ~ &quot;high&quot;, popdensity &lt; 80 ~ &quot;low&quot;)) %&gt;%
+  mutate(popdensity_lvl = factor(popdensity_lvl, levels = c(&quot;low&quot;, &quot;high&quot;))) %&gt;% select(c(country,3:9)) -&gt; dataset
+dataset %&gt;% mutate(sanprop_lvl = case_when(sanitationprop &lt; 0.5 ~ &quot;low&quot;, sanitationprop &gt; 0.85 ~ &quot;high&quot;, sanitationprop &gt; 0.5 ~ &quot;med&quot;)) %&gt;%
+  mutate(sanprop_lvl = factor(sanprop_lvl, levels = c(&quot;med&quot;, &quot;high&quot;, &quot;low&quot;))) %&gt;% select(c(1:5,7:9)) -&gt; dataset
+dataset %&gt;% glimpse()</code></pre>
+<pre><code>## Rows: 195
+## Columns: 8
+## $ country &lt;fct&gt; Afghanistan, Albania, Algeria, Andorra,
+Angola, Antigua and Barbuda, A…
+## $ fertilityrate &lt;dbl&gt; 5.82, 1.65, 2.89, NA, 6.16, 2.13,
+2.37, 1.55, 1.93, 1.44, 1.96, 1.87, …
+## $ childmortalityrate &lt;dbl&gt; 88.00, 13.30, 27.40, 4.18,
+120.00, 9.59, 14.40, 18.50, 4.77, 4.33, 37.…
+## $ foodsupply &lt;dbl&gt; 2100, 3080, 3140, NA, 2350, 2320,
+3160, 2770, 3210, 3720, 2970, 2600, …
+## $ billionairerate &lt;dbl&gt; 0.0000, 0.0000, 0.0000, 0.0000,
+0.0000, 0.0000, 0.0248, 0.0000, 0.5870…
+## $ inflation &lt;dbl&gt; 0.03810, 0.04490, 0.16100, 0.00374,
+0.31700, 0.01520, 0.20900, 0.07770…
+## $ popdensity_lvl &lt;fct&gt; low, high, low, high, low, high,
+low, high, low, high, high, low, high…
+## $ sanprop_lvl &lt;fct&gt; low, high, high, high, low, high,
+high, high, high, high, med, high, h…</code></pre>
+<div id="manova-test" class="section level3">
+<h3>MANOVA Test</h3>
+<ul>
+<li><strong>1. (15 pts)</strong> Perform a MANOVA testing whether any of your numeric variables (or a subset of them, if including them all is unreasonable or doesn't make sense) show a mean difference across levels of one of your categorical variables. If they do, perform univariate ANOVAs to find response(s) showing a mean difference across groups, and perform post-hoc t tests to find which groups differ. Discuss the number of tests you have performed, calculate the probability of at least one type I error (if unadjusted), and adjust the significance level accordingly (bonferroni correction) before discussing significant differences. Briefly discuss MANOVA assumptions and whether or not they are likely to have been met (no need for anything too in-depth).</li>
+</ul>
+<p>A MANOVA was performed to test if any of the numeric variables showed a mean difference across levels in the proportion of access to basic sanitation.</p>
+<pre class="r"><code>#original MANOVA
+man1&lt;-manova(cbind(fertilityrate,childmortalityrate,foodsupply,billionairerate,inflation)~sanprop_lvl, data=dataset)
+summary(man1)</code></pre>
+<pre><code>## Df Pillai approx F num Df den Df Pr(&gt;F)
+## sanprop_lvl 2 0.87942 24.642 10 314 &lt; 2.2e-16 ***
+## Residuals 160
+## ---
+## Signif. codes: 0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1
+&#39; &#39; 1</code></pre>
+<pre class="r"><code>#subsequent ANOVAs</code></pre>
+</div>
+<div id="randomization-test" class="section level3">
+<h3>Randomization Test</h3>
+<ul>
+<li><strong>2. (10 pts)</strong> Perform some kind of randomization test on your data (that makes sense). The statistic can be anything you want (mean difference, correlation, F-statistic/ANOVA, chi-squared), etc. State null and alternative hypotheses, perform the test, and interpret the results (7). Create a plot visualizing the null distribution and the test statistic (3).</li>
+</ul>
+</div>
+<div id="linear-regression-model" class="section level3">
+<h3>Linear Regression Model</h3>
+<ul>
+<li><p><strong>3. (35 pts)</strong> Build a linear regression model predicting one of your response variables from at least 2 other variables, including their interaction. Mean-center any numeric variables involved in the interaction.</p>
+<ul>
+<li>Interpret the coefficient estimates (do not discuss significance) (10)</li>
+<li>Plot the regression using <code>ggplot()</code> using geom_smooth(method=&quot;lm&quot;). If your interaction is numeric by numeric, refer to code in the slides to make the plot or check out the <code>interactions</code> package, which makes this easier. If you have 3 or more predictors, just chose two of them to plot for convenience. (8)</li>
+<li>Check assumptions of linearity, normality, and homoskedasticity either graphically or using a hypothesis test (4)</li>
+<li>Regardless, recompute regression results with robust standard errors via <code>coeftest(..., vcov=vcovHC(...))</code>. Discuss significance of results, including any changes from before/after robust SEs if applicable. (8)</li>
+<li>What proportion of the variation in the outcome does your model explain? (4)</li>
+</ul></li>
+</ul>
+</div>
+<div id="computation-of-bootstrapped-ses" class="section level3">
+<h3>Computation of Bootstrapped SEs</h3>
+<ul>
+<li><strong>4. (5 pts)</strong> Rerun same regression model (with the interaction), but this time compute bootstrapped standard errors (either by resampling observations or residuals). Discuss any changes you observe in SEs and p-values using these SEs compared to the original SEs and the robust SEs)</li>
+</ul>
+</div>
+<div id="prediction-of-a-binary-variable" class="section level3">
+<h3>Prediction of a Binary Variable</h3>
+<ul>
+<li><p><strong>5. (25 pts)</strong> Fit a logistic regression model predicting a binary variable (if you don't have one, make/get one) from at least two explanatory variables (interaction not necessary).</p>
+<ul>
+<li>Interpret coefficient estimates in context (10)</li>
+<li>Report a confusion matrix for your logistic regression (2)</li>
+<li>Compute and discuss the Accuracy, Sensitivity (TPR), Specificity (TNR), Precision (PPV), and AUC of your model (5)</li>
+<li>Using ggplot, make a density plot of the log-odds (logit) colored/grouped by your binary outcome variable (3)</li>
+<li>Generate an ROC curve (plot) and calculate AUC (either manually or with a package); interpret (5)</li>
+</ul></li>
+</ul>
+</div>
+<div id="secondary-prediction-of-a-binary-variable" class="section level3">
+<h3>Secondary Prediction of a Binary Variable</h3>
+<ul>
+<li><p><strong>6. (25 pts)</strong> Perform a logistic regression predicting the same binary response variable from <em>ALL</em> of the rest of your variables (the more, the better!)</p>
+<ul>
+<li>Fit model, compute in-sample classification diagnostics (Accuracy, Sensitivity, Specificity, Precision, AUC), and interpret (5)</li>
+<li>Perform 10-fold (or repeated random sub-sampling) CV with the same model and report average out-of-sample classification diagnostics (Accuracy, Sensitivity, Specificity, Precision, and AUC); interpret AUC and compare with the in-sample metrics (10)</li>
+<li>Perform LASSO on the same model/variables. Choose lambda to give the simplest model whose accuracy is near that of the best (i.e., <code>lambda.1se</code>). Discuss which variables are retained. (5)</li>
+<li>Perform 10-fold CV using only the variables lasso selected: compare model's out-of-sample AUC to that of your logistic regressions above (5)</li>
+</ul></li>
+</ul>
+<p>...</p>
+</div>
 </div>
 
             

@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Jacks Pino" />
+    
+    <link rel="shortcut icon" type="image/x-icon" href="../../img/favicon.ico">
+    <title>HW 8</title>
+    <meta name="generator" content="Hugo 0.79.0" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="../../css/main.css" />
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,200bold,400old" />
+    
+    <!--[if lt IE 9]>
+			<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+			<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+
+    
+  </head>
+
+  <body>
+    <div id="wrap">
+      
+      <nav class="navbar navbar-default">
+  <div class="container">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="../../"><i class="fa fa-home"></i></a>
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <div class="navbar-collapse collapse" id="navbar">
+      <ul class="nav navbar-nav navbar-right">
+      
+        
+        <li><a href="../../post/">BLOG</a></li>
+        
+        <li><a href="../../projects/">PROJECTS</a></li>
+        
+        <li><a href="../../resume/">RESUME</a></li>
+        
+      
+      </ul>
+    </div>
+  </div>
+</nav>
+
+      <div class="container">
+        <div class="blog-post">
+          <h3>
+            <strong><a href="../../project/hw8/">HW 8</a></strong>
+          </h3>
+        </div>
+ 
+<div class="blog-title">
+          <h4>
+         January 1, 0001 
+            &nbsp;&nbsp;
+            
+          </h4>
+        </div>
+
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <div class="blogpost">
+              
+
+
+<div id="jacks-pino-jap6527" class="section level2">
+<h2>Jacks Pino, jap6527</h2>
+</div>
+<div id="question-1" class="section level2">
+<h2>Question 1</h2>
+<p>We will analyze some data from a famous case of alleged gender discrimination in admission to graduate programs at UC Berkeley in 1973. The three variables are <code>Admit</code> (Admitted, Rejected), <code>Gender</code> (Male, Female), and <code>Dept</code> (Departments A, B, C, D, E, F). First, create a dichotomous outcome variable <span class="math inline">\(y\)</span> that is 1 if Admit==&quot;Admitted&quot; and 0 otherwise.</p>
+<div id="pts" class="section level3">
+<h3>1.1 (2 pts)</h3>
+<p>Predict <span class="math inline">\(y\)</span> from Gender using a logistic regression. Is the effect significant? Interpret the effect: what is the odds ratio for admission to graduate school for women compared to men? Compute the predicted probability of admission for women and for men.</p>
+<pre class="r"><code>library(tidyverse)
+# adm &lt;-
+# read.csv(&#39;http://www.nathanielwoodward.com/admissions.csv&#39;)
+# data &lt;-
+# adm%&gt;%mutate(y=ifelse(Admit==&#39;Admitted&#39;,1,0))
+
+# fit &lt;- glm(y~Gender, data=data,
+# family=&#39;binomial&#39;)
+
+# coeftest(fit) #gives p-value to say if this is
+# significant or not (newsflash - it is)
+# exp(coef(fit)) #odds-scale for interpretation
+
+# data$prob &lt;- predict(fit,type=&#39;response&#39;)
+# data$predicted &lt;-
+# ifelse(data$prob&gt;.5,&#39;Male&#39;,&#39;Female&#39;) data
+# predict(fit, newdata=data.frame(Gender=Male),
+# type = &#39;link&#39;)
+
+
+# table(truth=data$Admit,
+# prediction=data$Admit)%&gt;%addmargins
+# table(truth=data$Admit,
+# prediction=data$predicted)%&gt;%addmargins</code></pre>
+<p><em>your answer here</em></p>
+</div>
+<div id="pts-1" class="section level3">
+<h3>1.2 (2 pts)</h3>
+<p>Now predict <span class="math inline">\(y\)</span> (admission) from Dept using a logistic regression. Interpret the overall pattern of results. For which departments are odds of admission higher than A? Which departments are the most selective? The least?</p>
+<pre class="r"><code># your code here</code></pre>
+<p><em>your answer here</em></p>
+</div>
+<div id="pts-2" class="section level3">
+<h3>1.3 (2 pts)</h3>
+<p>Rerun the model but add both <code>Dept</code> (Department of graduate program) and <code>Gender</code> as predictors (no interaction). Interpret the coefficient for <code>Gender</code> now (note there is no interaction, so the effect doesn't depend on the level of <code>Dept</code>). Controlling for Department, is there a significant effect of Gender on admissions? What is the odds ratio? What can you say about departments A and B compared to the others (in terms of odds/probability of admission; relevel if need be)?</p>
+<pre class="r"><code># your code here</code></pre>
+<p><em>your answer here</em></p>
+</div>
+<div id="pts-3" class="section level3">
+<h3>1.4 (2 pts)</h3>
+<p>OK, now add the interaction of Gender and Department as you predict <span class="math inline">\(y\)</span> (admissions), to get a fuller picture. Compute the odds ratio for admission (Male vs. Female) in each department (A through F). Which departments favor Male applicants (i.e., higher odds of admission for Males)?</p>
+<pre class="r"><code># your code here</code></pre>
+<p><em>your answer here</em></p>
+</div>
+<div id="pts-4" class="section level3">
+<h3>1.5 (2 pts)</h3>
+<p>Take the admit dataset and, using dplyr functions, create a table with counts of applicants of each Gender in each Department (e.g., number of males who applied to department A) and also the percent of applicants admitted of each Gender in each Department. Sort descending by the count variable. In terms of selectivity, what kinds of departments did the majority of women apply to? What about the majority of men? Skim through the wikipedia article about Simpson's paradox (<a href="https://en.wikipedia.org/wiki/Simpsons_paradox" class="uri">https://en.wikipedia.org/wiki/Simpsons_paradox</a>) to get a better idea of what is going on here!</p>
+<pre class="r"><code># your code here</code></pre>
+<p><em>your answer here</em></p>
+</div>
+</div>
+<div id="question-2" class="section level2">
+<h2>Question 2</h2>
+<p>Load the <code>starwars</code> data (from the dplyr package). Select just the variables <code>mass</code>, <code>height</code>, and <code>species</code> (these three variables only), remove all of the NAs from these, and save the result as <code>starwars1</code>. Create a binary numeric variable <span class="math inline">\(y\)</span>, <span class="math inline">\(y=1\)</span> if species is Human, <span class="math inline">\(y=0\)</span> otherwise, and add it as a column in <code>starwars1</code> (e.g., using mutate). Use this modified dataset (<code>starwars1</code>) for the remaining questions.</p>
+</div>
+<div id="pts-5" class="section level2">
+<h2>2.1 (3 pts)</h2>
+<p>Predict the dichotomous Human indicator variable (<code>y</code>) that you just created from <code>height</code> using a logistic regression. Briefly interpret. Plot the ROC curve and compute the AUC (don't worry: it should be terrible). Create a plot of the logistic regression showing predicted probability of being Human by height. Color points by predicted human vs predicted not.</p>
+<pre class="r"><code># your code here</code></pre>
+<p><em>your answer here</em></p>
+</div>
+<div id="pts-6" class="section level2">
+<h2>2.2 (2 pts)</h2>
+<p>Predict the Human indicator variable (<code>y</code>) from <code>height</code> and <code>mass</code> (no interaction). Discuss the output briefly (you do not have to interpret any coefficients). Compute Accuracy, Sensitivity, and Specificity. Plot the ROC curve and compute the AUC (it should still be bad)</p>
+<pre class="r"><code># your code here</code></pre>
+<p><em>your answer here</em></p>
+</div>
+<div id="pts-7" class="section level2">
+<h2>2.3 (3 pts)</h2>
+<p>Predict the Human indicator variable (<code>y</code>) from the interaction of height and mass. Be sure to center your variables first, and save them to the <code>starwars1</code> dataset as <code>mass_c</code> and <code>height_c</code>. Discuss the output. Compute Accuracy, Sensitivity, and Specificity. Plot the ROC curve and calculate the AUC. Compare the AUC with that of the main-effects model in 2.2 (it should be a bit better).</p>
+<pre class="r"><code># your code here</code></pre>
+<p><em>your answer here</em></p>
+</div>
+<div id="pts-8" class="section level2">
+<h2>2.4 (2 pts)</h2>
+<p>We want to visualize the interaction, but it is continuous! We can get around this by setting mass_c to the mean (0) and plus/minus one standard deviation and then, for each of these three values, looking at the effect of height on the probability of being human. Below, in the code given, I take the dataset and I duplicate it three times: to one, I add a column with <code>mass_c=0</code>, to another, I add <code>mass_c=sd(mass)</code>, and to the third I add <code>mass_c=-sd(mass)</code>. Then, I stack them all on top of each other and add a label variable for each (<code>mass_cat</code>). Use this new dataset and <code>predict(your_fit_from_2.3, newdata=starwars_new, type=&quot;response&quot;)</code> to get predicted probabilities from your interaction model from 2.3, save the predicted probabilities in the dataset starwars_new, and then send the dataset to ggplot to plot those predicted probabilities (y-axis) against height (or height_c, on the x-axis) (use geom_line and set <code>color=mass_cat</code>). Interpret the interaction by describing what you see in the plot!</p>
+<pre class="r"><code>## Code to get you started on 2d starwars_new &lt;-
+## bind_rows(mutate(starwars1,mass_c=0),
+## mutate(starwars1,mass_c=sd(mass)),
+## mutate(starwars1,mass_c=-sd(mass)))
+
+# starwars_new &lt;- starwars_new%&gt;%
+# mutate(mass_cat=c(rep(&#39;mean&#39;,nrow(starwars1)),
+# rep(&#39;mean+1sd&#39;,nrow(starwars1)),
+# rep(&#39;mean-1sd&#39;,nrow(starwars1))))
+
+
+# your code here</code></pre>
+<p><em>your answer here</em></p>
+<pre><code>## R version 3.6.1 (2019-07-05)
+## Platform: x86_64-pc-linux-gnu (64-bit)
+## Running under: Ubuntu 18.04.5 LTS
+## 
+## Matrix products: default
+## BLAS:   /stor/system/opt/R/R-3.6.1/lib/R/lib/libRblas.so
+## LAPACK: /stor/system/opt/R/R-3.6.1/lib/R/lib/libRlapack.so
+## 
+## locale:
+##  [1] LC_CTYPE=en_US.UTF-8       LC_NUMERIC=C              
+##  [3] LC_TIME=en_US.UTF-8        LC_COLLATE=en_US.UTF-8    
+##  [5] LC_MONETARY=en_US.UTF-8    LC_MESSAGES=en_US.UTF-8   
+##  [7] LC_PAPER=en_US.UTF-8       LC_NAME=C                 
+##  [9] LC_ADDRESS=C               LC_TELEPHONE=C            
+## [11] LC_MEASUREMENT=en_US.UTF-8 LC_IDENTIFICATION=C       
+## 
+## attached base packages:
+## [1] stats     graphics  grDevices utils     datasets  methods   base     
+## 
+## other attached packages:
+## [1] forcats_0.5.0   stringr_1.4.0   dplyr_1.0.1     purrr_0.3.4    
+## [5] readr_1.3.1     tidyr_1.1.1     tibble_3.0.3    ggplot2_3.3.2  
+## [9] tidyverse_1.3.0
+## 
+## loaded via a namespace (and not attached):
+##  [1] Rcpp_1.0.5       formatR_1.7      cellranger_1.1.0 pillar_1.4.6    
+##  [5] compiler_3.6.1   dbplyr_1.4.4     tools_3.6.1      digest_0.6.25   
+##  [9] lubridate_1.7.9  jsonlite_1.7.0   evaluate_0.14    lifecycle_0.2.0 
+## [13] gtable_0.3.0     pkgconfig_2.0.3  rlang_0.4.7      reprex_0.3.0    
+## [17] cli_2.0.2        rstudioapi_0.11  DBI_1.1.0        yaml_2.2.1      
+## [21] blogdown_0.20    haven_2.3.1      xfun_0.16        withr_2.2.0     
+## [25] xml2_1.3.2       httr_1.4.2       knitr_1.29       fs_1.5.0        
+## [29] hms_0.5.3        generics_0.0.2   vctrs_0.3.2      grid_3.6.1      
+## [33] tidyselect_1.1.0 glue_1.4.2       R6_2.4.1         fansi_0.4.1     
+## [37] readxl_1.3.1     rmarkdown_2.3    bookdown_0.20    modelr_0.1.8    
+## [41] blob_1.2.1       magrittr_1.5     backports_1.1.8  scales_1.1.1    
+## [45] ellipsis_0.3.1   htmltools_0.5.0  rvest_0.3.6      assertthat_0.2.1
+## [49] colorspace_1.4-1 stringi_1.5.3    munsell_0.5.0    broom_0.7.0     
+## [53] crayon_1.3.4</code></pre>
+<pre><code>## [1] &quot;2020-12-11 22:11:51 CST&quot;</code></pre>
+<pre><code>##                                       sysname 
+##                                       &quot;Linux&quot; 
+##                                       release 
+##                          &quot;4.15.0-117-generic&quot; 
+##                                       version 
+## &quot;#118-Ubuntu SMP Fri Sep 4 20:02:41 UTC 2020&quot; 
+##                                      nodename 
+##                  &quot;educcomp04.ccbb.utexas.edu&quot; 
+##                                       machine 
+##                                      &quot;x86_64&quot; 
+##                                         login 
+##                                     &quot;unknown&quot; 
+##                                          user 
+##                                     &quot;jap6527&quot; 
+##                                effective_user 
+##                                     &quot;jap6527&quot;</code></pre>
+</div>
+
+            
+        <hr>         <div class="related-posts">
+                <h5>Related Posts</h5>
+                
+              </div> 
+            </div>
+          </div>
+
+   <hr>  <div class="disqus">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+
+    (function() {
+      
+      
+      if (window.location.hostname == "localhost")
+        return;
+
+      var disqus_shortname = '';
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  <a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div> 
+        </div>
+      </div>
+    </div>
+
+    
+    <footer>
+  <div id="footer">
+    <div class="container">
+      <p class="text-muted">&copy; All rights reserved. Powered by <a href="https://gohugo.io/">Hugo</a> and
+      <a href="http://www.github.com/nurlansu/hugo-sustain/">sustain</a> with ♥</p>
+    </div>
+  </div>
+</footer>
+<div class="footer"></div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="../../js/docs.min.js"></script>
+<script src="../../js/main.js"></script>
+
+<script src="../../js/ie10-viewport-bug-workaround.js"></script>
+
+
+    
+  </body>
+</html>

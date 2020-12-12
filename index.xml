@@ -18,21 +18,12 @@ In this blog post, I&#39;m going to go over a basic but powerful concept in Pyth
     </item>
     
     <item>
-      <title>Project 1</title>
-      <link>/project/project1test/</link>
-      <pubDate>Tue, 01 Dec 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/project/project1test/</guid>
-      <description> Test Project 1  </description>
-    </item>
-    
-    <item>
-      <title>Project 2</title>
+      <title>Project 2: Modeling, Testing, and Predicting</title>
       <link>/project/project2/</link>
-      <pubDate>Tue, 01 Dec 2020 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 11 Dec 2020 00:00:00 +0000</pubDate>
       
       <guid>/project/project2/</guid>
-      <description> Test Project 2  </description>
+      <description>Jacks Pino - jap6527 - SDS 348 - 12/11/2020  Introduction I chose to use data I found on gapminder.org, which has a plethora of data of the world&#39;s countries. The variables I chose to look at in particular were the following: fertility rate, child mortality rate, food supply, the proportion of billionaires, the proportion of those who have access to basic sanitation, population density, and the rate of inflation.</description>
     </item>
     
     <item>
@@ -45,6 +36,27 @@ In this blog post, I&#39;m going to go over a basic but powerful concept in Pyth
     </item>
     
     <item>
+      <title>HW 8</title>
+      <link>/project/hw8/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/project/hw8/</guid>
+      <description>Jacks Pino, jap6527  Question 1 We will analyze some data from a famous case of alleged gender discrimination in admission to graduate programs at UC Berkeley in 1973. The three variables are Admit (Admitted, Rejected), Gender (Male, Female), and Dept (Departments A, B, C, D, E, F). First, create a dichotomous outcome variable \(y\) that is 1 if Admit==&amp;quot;Admitted&amp;quot; and 0 otherwise.
+1.1 (2 pts) Predict \(y\) from Gender using a logistic regression.</description>
+    </item>
+    
+    <item>
+      <title>HW 9</title>
+      <link>/project/hw9/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/project/hw9/</guid>
+      <description>Enter your name and EID here This homework is due on Sunday Nov 15, 2020 at 11:59pm. Please submit as an HTML file on Canvas.
+For all questions, include the R commands/functions that you used to find your answer. Answers without supporting code will not receive credit.
+ Review of how to submit this assignment All homework assignments will be completed using R Markdown. These .Rmd files consist of text/syntax (formatted using Markdown) alongside embedded R code.</description>
+    </item>
+    
+    <item>
       <title>Projects</title>
       <link>/projects/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -53,6 +65,10 @@ In this blog post, I&#39;m going to go over a basic but powerful concept in Pyth
       <description> Check out some of my coding projects below:
  Wrangling &amp;amp; Exploratory Data Analysis
  Modeling, Inference, Prediction
+ Homework 8
+ Homework 9
+ Homework 10
+ Homework 1
   -- </description>
     </item>
     

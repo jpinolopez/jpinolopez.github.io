@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Jacks Pino" />
+    
+    <link rel="shortcut icon" type="image/x-icon" href="../../img/favicon.ico">
+    <title>HW 9</title>
+    <meta name="generator" content="Hugo 0.79.0" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="../../css/main.css" />
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,200bold,400old" />
+    
+    <!--[if lt IE 9]>
+			<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+			<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+
+    
+  </head>
+
+  <body>
+    <div id="wrap">
+      
+      <nav class="navbar navbar-default">
+  <div class="container">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="../../"><i class="fa fa-home"></i></a>
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <div class="navbar-collapse collapse" id="navbar">
+      <ul class="nav navbar-nav navbar-right">
+      
+        
+        <li><a href="../../post/">BLOG</a></li>
+        
+        <li><a href="../../projects/">PROJECTS</a></li>
+        
+        <li><a href="../../resume/">RESUME</a></li>
+        
+      
+      </ul>
+    </div>
+  </div>
+</nav>
+
+      <div class="container">
+        <div class="blog-post">
+          <h3>
+            <strong><a href="../../project/hw9/">HW 9</a></strong>
+          </h3>
+        </div>
+ 
+<div class="blog-title">
+          <h4>
+         January 1, 0001 
+            &nbsp;&nbsp;
+            
+          </h4>
+        </div>
+
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <div class="blogpost">
+              
+
+
+<div id="enter-your-name-and-eid-here" class="section level2">
+<h2>Enter your name and EID here</h2>
+<p><strong>This homework is due on Sunday Nov 15, 2020 at 11:59pm. Please submit as an HTML file on Canvas.</strong></p>
+<p><em>For all questions, include the R commands/functions that you used to find your answer. Answers without supporting code will not receive credit.</em></p>
+<blockquote>
+<p><strong>Review of how to submit this assignment</strong> All homework assignments will be completed using R Markdown. These <code>.Rmd</code> files consist of text/syntax (formatted using Markdown) alongside embedded R code. When you have completed the assignment (by adding R code inside codeblocks and supporting text outside of the codeblocks), create your document as follows:</p>
+</blockquote>
+<blockquote>
+<ul>
+<li>Click the arrow next to the &quot;Knit&quot; button (above)</li>
+<li>Choose &quot;Knit to HTML&quot; and wait; fix any errors if applicable</li>
+<li>Go to Files pane and put checkmark next to the correct HTML file</li>
+<li>Click on the blue gear icon (&quot;More&quot;) and click Export</li>
+<li>Download the file and then upload to Canvas</li>
+</ul>
+</blockquote>
+<hr />
+</div>
+<div id="question-1" class="section level2">
+<h2>Question 1</h2>
+<p>Back to Pokemon! There is a somewhat famous DataCamp module for predicting what makes a pokemon legendary and I wanted to put my own spin on it.</p>
+<div id="pts" class="section level3">
+<h3>1.1 (1 pts)</h3>
+<p>First, run the following code to read in the data and drop the unnecessary variables. With the resulting dataset <code>poke</code>, how many are Legendary? How many are not?</p>
+<pre class="r"><code>library(tidyverse)
+# poke&lt;-read.csv(&#39;http://www.nathanielwoodward.com/Pokemon.csv&#39;)
+# poke&lt;-poke%&gt;%select(-`X.`,-Total,-Name)
+
+# your code here</code></pre>
+<p><em>your answer here, 1-2 sentences</em></p>
+</div>
+<div id="pts-1" class="section level3">
+<h3>1.2 (2 pts)</h3>
+<p>Predict Legendary from all of the remaining variables (recall the shortcut for this: <code>Legendary~.</code>) using a logistic regression. You don't need to convert it: R is smart enough to do this for you. Generate predicted probabilities for your original observations and save them as an object called <code>prob</code> in your environment (don't save them to the <code>poke</code> dataset). Use them to compute classification diagnostics with the <code>class_diag()</code> function we used during class (or the equivalent: it is declared in the preamble above so it gets loaded when you knit: if you run it, you should be able to use it in any subsequent code chunk). How well is the model performing per AUC? Provide a confusion matrix too and provide brief interpretation of what you see.</p>
+<pre class="r"><code># your code here</code></pre>
+<p><em>your answer here, 1-2 sentences</em></p>
+</div>
+<div id="pts-2" class="section level3">
+<h3>1.3 (3 pts)</h3>
+<p>Now perform 10-fold cross validation with this model by hand like we have done in class (don't use any outside packages). Summarize the results by reporting average classification diagnostics (e.g., from <code>class_diags()</code>) across the ten folds (you might get a <code>NaN</code> for ppv, which is fine). Do you see a substantial decrease in AUC when predicting out of sample (i.e, does this model shows signs of overfitting?)</p>
+<pre class="r"><code># set.seed(1234) k=10
+
+# your code here</code></pre>
+<p><em>your answer here</em></p>
+</div>
+<div id="pts-3" class="section level3">
+<h3>1.4 (3 pts)</h3>
+<p>OK, now perform a LASSO regression on the same model (i.e., predicting Legendary from all predictor variables). You will need to have your predictor variables in a matrix (call it <code>poke_preds</code>) and your response variable in a separate matrix. A good idea would be to use model.matrix(fit) from above to get the predictor-variable matrix (do not include the <code>(intercept)</code> term; i.e., drop the first column). To get the response, just do <code>as.matrix(poke$Legendary)</code>. Perform cross-validation via <code>cv.glmnet</code> to select the regularization parameter lambda and pick <code>lambda.1se</code> to perform lasso regularization. Save your lasso/glmnet object as <code>lasso_fit</code>. Which coefficient estimates are non-zero? Use <code>predict(lasso_fit, poke_preds, type=&quot;response&quot;)</code> Report classification diagnostics. Also, provide a confusion matrix and talk about what you see. How does this compare with the full model from 1.2?</p>
+<pre class="r"><code># install.packages(&#39;glmnet&#39;) library(glmnet) set.seed(1234)
+# your code here</code></pre>
+<p><em>your answer here, 1-2 sentences</em></p>
+</div>
+<div id="pts-4" class="section level3">
+<h3>1.5 (2 pts)</h3>
+<p>Re-run your 10-fold CV from above (1.3), but this time use only the predictor variables which had non-zero LASSO coefficient estimates (like you did in lab). Note that you will need to use/make dummies/indicator variables for the significant types, so you might grab the corresponding columns from the <code>poke_preds</code> matrix you used above. How does this model compare to the full model in terms of out-of-sample prediction? (Technical note: Because CV was already used to choose lambda, if we do CV again we are not getting a pure estimate of the lasso model's performance on new data, since it has already &quot;seen&quot; all of the data and let that inform its estimates. For our purposes this is a minor issue, but it can be a bigger deal in real life.)</p>
+<pre class="r"><code># set.seed(1234) k=10
+
+# your code here</code></pre>
+<p><em>your answer here, 1-2 sentences</em></p>
+</div>
+<div id="pts-5" class="section level3">
+<h3>1.6 (1 pts)</h3>
+<p>Let's do something <em>fancy-sounding</em>. We will use a random forest classifier to predict Legendary status from our predictor variables. In brief, this technique uses decision trees fitted (or &quot;grown&quot;) repeatedly on bootstrapped samples of the data (i.e., with replacement), using bootstrapped samples of the predictor variables to predict (so not every model has all of the predictors: an interesting twist!). The predictions (Legendary/not) from each such tree are then averaged (&quot;bagged&quot; or bootstrap-aggregated); the proportion of trees predicting each pokemon as Legendary can be gotten and used as a probability for diagnostic purposes. Just like in CV, averaging performance (of many decision trees) across many (bootstrapped) samples reduces overfitting and makes our predictions more robust to noise. For more information about this cool technique, which we do not have time to cover in any detail, see (wikipedia)[<a href="https://en.wikipedia.org/wiki/Random_forest" class="uri">https://en.wikipedia.org/wiki/Random_forest</a>].</p>
+<p>We will use the predictions from this model to compare classification performance with our those of our logistic regression (using the variables selected by lasso regularization, a technique also designed to curtail overfitting). Note that we are using the random forest function right out of the box and better performance could probably be achieved if we tuned certain arguments (e.g., ntree, mtry).</p>
+<p>Because the technique is based on fitting a model to repeated bootstrapped samples and aggregating across predictions, we don't expect that using k-fold CV will show much difference. But let's see! Run the following code to (1) fit the random forest model and produce the classification diagnostics and (2) perform 10-fold CV on the random forest model (to show it doesn't really change).</p>
+<p>Compare the classification performance of the logistic regression using the variables lasso selected (i.e., the CV performance) with the classification performance of the random forest. Is there much difference?</p>
+<pre class="r"><code># install.packages(&#39;randomForest&#39;)
+library(randomForest)
+# fit_rf=randomForest(Legendary~.,data=poke)
+
+# class_diag(fit_rf$votes[,2],poke$Legendary)
+
+######### CV set.seed(1234) k=10
+
+# data1&lt;-poke[sample(nrow(poke)),]
+# folds&lt;-cut(seq(1:nrow(poke)),breaks=k,labels=F)
+
+# diags&lt;-NULL for(i in 1:k){ train&lt;-data1[folds!=i,]
+# test&lt;-data1[folds==i,] truth&lt;-test$Legendary
+
+# fit&lt;-randomForest(Legendary~.,data=train)
+# probs&lt;-predict(fit,newdata = test,type=&#39;prob&#39;)[,2]
+
+# diags&lt;-rbind(diags,class_diag(probs,truth)) }
+
+# diags%&gt;%summarize_all(mean)</code></pre>
+<p><em>your answer here</em></p>
+</div>
+<div id="pts-6" class="section level3">
+<h3>2.1 (2 pts)</h3>
+<p>Below, you are given 6 malignant patients and 6 benign patients. The vectors contain their predicted probabilities (i.e., the probability of malignancy from some model). If you compare every malignant patient with every benign patient, how many times does a malignant patient have a higher predicted probability than a benign patient? What proportion of all the comparisons is that? You can easily do this by hand, but you might try to find a way to use <code>expand.grid()</code>, <code>outer()</code>, or even a loop to calculate this in R (use ?functionname to read about these functions if you are curious!).</p>
+<pre class="r"><code># malig&lt;-c(.49, .36, .58, .56, .61, .66)
+benign &lt;- c(0.42, 0.22, 0.26, 0.53, 0.31, 0.41)
+
+
+# example of how to use expand.grid
+# expand.grid(lets=c(&#39;A&#39;,&#39;B&#39;,&#39;C&#39;),nums=c(1,2,3))
+
+# example of how to use outer() outer(c(4,5,6),c(1,2,3),&#39;-&#39;)</code></pre>
+</div>
+<div id="pts-7" class="section level3">
+<h3>2.2 (1 pts)</h3>
+<p>Now, treat the predicted probabilities as the response variable and perform an Wilcoxon/Mann-Whitney U test in R using <code>wilcox.test(group1, group2)</code> comparing the distribution of predicted probabilities for both groups (malig and benign). What does your W/U statistic equal?</p>
+<pre class="r"><code>## Your code here</code></pre>
+</div>
+<div id="pts-8" class="section level3">
+<h3>2.3 (2 pts)</h3>
+<p>Make these data tidy by creating a dataframe and putting all predicted probabilities into one column and the malignant/benign labels in another (you should end up with twelve rows, one for each observation). Use this data and ggplot to make a graph of the distribution of probabilities for both groups (histogram): fill by group. Leave default binwidth alone (it will look kind of like a barcode). Eyeballing and counting manually, for each benign (red) compute the number of malignants (blue) it is greater than (blue) and add them all up. This is the number of times a benign has a higher predicted probability than a malignant! In 1.1 you found the number of times a malignant beats a benign (i.e., has a higher predicted probability than a benign): What do those two numbers add up to?</p>
+<pre class="r"><code>## your code here</code></pre>
+<p><em>your answer here, 1-2 sentences</em></p>
+</div>
+<div id="pts-9" class="section level3">
+<h3>2.4 (2 pts)</h3>
+<p>Set the cutoff/threshold at .2, .25, .3, .35, .37, .4, .45, .5, .55, .57, .6, .65, .7 and for for each cutoff, compute the true-positive rate (TPR) and the false-postive rate (FPR). You may do this manually, but I encourage you to try to figure out a way to do it in R (e.g., using <code>expand.grid</code> and/or <code>dplyr</code> functions). Save the TPR and FPR your get for each cut-off. Then make a plot of the TPR (y-axis) against the FPR (x-axis) using geom_path.</p>
+<pre class="r"><code>cutoffs &lt;- c(0.2, 0.25, 0.3, 0.35, 0.37, 0.4, 0.45, 0.5, 0.55, 
+    0.57, 0.6, 0.65, 0.7)
+
+
+
+
+# your code here</code></pre>
+</div>
+<div id="pt" class="section level3">
+<h3>2.5 (1 pt)</h3>
+<p>Use the <code>class_diag()</code> function to calculate the AUC (and other diagnostics on this data). Where in this assignment have you seen that AUC number before? (If you haven't seen that number before, go back and redo 2.1 and make sure you are answering both questions!)</p>
+<pre class="r"><code># your code here</code></pre>
+<p><em>your answer here, 1-2 sentences</em></p>
+<pre><code>## R version 3.6.1 (2019-07-05)
+## Platform: x86_64-pc-linux-gnu (64-bit)
+## Running under: Ubuntu 18.04.5 LTS
+## 
+## Matrix products: default
+## BLAS:   /stor/system/opt/R/R-3.6.1/lib/R/lib/libRblas.so
+## LAPACK: /stor/system/opt/R/R-3.6.1/lib/R/lib/libRlapack.so
+## 
+## locale:
+##  [1] LC_CTYPE=en_US.UTF-8       LC_NUMERIC=C              
+##  [3] LC_TIME=en_US.UTF-8        LC_COLLATE=en_US.UTF-8    
+##  [5] LC_MONETARY=en_US.UTF-8    LC_MESSAGES=en_US.UTF-8   
+##  [7] LC_PAPER=en_US.UTF-8       LC_NAME=C                 
+##  [9] LC_ADDRESS=C               LC_TELEPHONE=C            
+## [11] LC_MEASUREMENT=en_US.UTF-8 LC_IDENTIFICATION=C       
+## 
+## attached base packages:
+## [1] stats     graphics  grDevices utils     datasets  methods   base     
+## 
+## other attached packages:
+##  [1] randomForest_4.6-14 forcats_0.5.0       stringr_1.4.0      
+##  [4] dplyr_1.0.1         purrr_0.3.4         readr_1.3.1        
+##  [7] tidyr_1.1.1         tibble_3.0.3        ggplot2_3.3.2      
+## [10] tidyverse_1.3.0     knitr_1.29         
+## 
+## loaded via a namespace (and not attached):
+##  [1] tidyselect_1.1.0 xfun_0.16        haven_2.3.1      colorspace_1.4-1
+##  [5] vctrs_0.3.2      generics_0.0.2   htmltools_0.5.0  yaml_2.2.1      
+##  [9] blob_1.2.1       rlang_0.4.7      pillar_1.4.6     glue_1.4.2      
+## [13] withr_2.2.0      DBI_1.1.0        dbplyr_1.4.4     modelr_0.1.8    
+## [17] readxl_1.3.1     lifecycle_0.2.0  munsell_0.5.0    blogdown_0.20   
+## [21] gtable_0.3.0     cellranger_1.1.0 rvest_0.3.6      evaluate_0.14   
+## [25] fansi_0.4.1      broom_0.7.0      Rcpp_1.0.5       scales_1.1.1    
+## [29] backports_1.1.8  formatR_1.7      jsonlite_1.7.0   fs_1.5.0        
+## [33] hms_0.5.3        digest_0.6.25    stringi_1.5.3    bookdown_0.20   
+## [37] grid_3.6.1       cli_2.0.2        tools_3.6.1      magrittr_1.5    
+## [41] crayon_1.3.4     pkgconfig_2.0.3  ellipsis_0.3.1   xml2_1.3.2      
+## [45] reprex_0.3.0     lubridate_1.7.9  assertthat_0.2.1 rmarkdown_2.3   
+## [49] httr_1.4.2       rstudioapi_0.11  R6_2.4.1         compiler_3.6.1</code></pre>
+<pre><code>## [1] &quot;2020-12-11 22:11:53 CST&quot;</code></pre>
+<pre><code>##                                       sysname 
+##                                       &quot;Linux&quot; 
+##                                       release 
+##                          &quot;4.15.0-117-generic&quot; 
+##                                       version 
+## &quot;#118-Ubuntu SMP Fri Sep 4 20:02:41 UTC 2020&quot; 
+##                                      nodename 
+##                  &quot;educcomp04.ccbb.utexas.edu&quot; 
+##                                       machine 
+##                                      &quot;x86_64&quot; 
+##                                         login 
+##                                     &quot;unknown&quot; 
+##                                          user 
+##                                     &quot;jap6527&quot; 
+##                                effective_user 
+##                                     &quot;jap6527&quot;</code></pre>
+</div>
+</div>
+
+            
+        <hr>         <div class="related-posts">
+                <h5>Related Posts</h5>
+                
+              </div> 
+            </div>
+          </div>
+
+   <hr>  <div class="disqus">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+
+    (function() {
+      
+      
+      if (window.location.hostname == "localhost")
+        return;
+
+      var disqus_shortname = '';
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  <a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div> 
+        </div>
+      </div>
+    </div>
+
+    
+    <footer>
+  <div id="footer">
+    <div class="container">
+      <p class="text-muted">&copy; All rights reserved. Powered by <a href="https://gohugo.io/">Hugo</a> and
+      <a href="http://www.github.com/nurlansu/hugo-sustain/">sustain</a> with ♥</p>
+    </div>
+  </div>
+</footer>
+<div class="footer"></div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="../../js/docs.min.js"></script>
+<script src="../../js/main.js"></script>
+
+<script src="../../js/ie10-viewport-bug-workaround.js"></script>
+
+
+    
+  </body>
+</html>
